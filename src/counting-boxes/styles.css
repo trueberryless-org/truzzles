@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     display: flex;
@@ -54,6 +58,75 @@ p {
 
 .box:hover {
     background-color: #0056b3;
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+.box:hover::before {
+    content: "+1"; /* Der Inhalt des Pseudo-Elements */
+    position: absolute; /* Position relativ zur Box */
+    top: -10px; /* 20px über der Box */
+    right: -10px; /* 20px rechts von der Box */
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10000px;
+    transform: rotate(-5deg); /* Leichte Rotation */
+    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+    opacity: 0; /* Beginnt unsichtbar */
+    user-select: none;
+    z-index: 1000;
+    font-size: 1rem;
+}
+
+:is(
+        .container:has(.box:nth-child(1):hover) .box:nth-child(2),
+        .container:has(.box:nth-child(1):hover) .box:nth-child(3),
+        .container:has(.box:nth-child(2):hover) .box:nth-child(1),
+        .container:has(.box:nth-child(2):hover) .box:nth-child(4),
+        .container:has(.box:nth-child(3):hover) .box:nth-child(1),
+        .container:has(.box:nth-child(3):hover) .box:nth-child(4),
+        .container:has(.box:nth-child(4):hover) .box:nth-child(2),
+        .container:has(.box:nth-child(4):hover) .box:nth-child(3)
+    ) {
+    background-color: #0056b3;
+}
+
+:is(
+        .container:has(.box:nth-child(1):hover) .box:nth-child(2),
+        .container:has(.box:nth-child(1):hover) .box:nth-child(3),
+        .container:has(.box:nth-child(2):hover) .box:nth-child(1),
+        .container:has(.box:nth-child(2):hover) .box:nth-child(4),
+        .container:has(.box:nth-child(3):hover) .box:nth-child(1),
+        .container:has(.box:nth-child(3):hover) .box:nth-child(4),
+        .container:has(.box:nth-child(4):hover) .box:nth-child(2),
+        .container:has(.box:nth-child(4):hover) .box:nth-child(3)
+    )::before {
+    content: "+1"; /* Der Inhalt des Pseudo-Elements */
+    position: absolute; /* Position relativ zur Box */
+    top: -10px; /* 20px über der Box */
+    right: -10px; /* 20px rechts von der Box */
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10000px;
+    transform: rotate(-5deg); /* Leichte Rotation */
+    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+    opacity: 0; /* Beginnt unsichtbar */
+    user-select: none;
+    z-index: 1000;
+    font-size: 1rem;
+}
+
+@keyframes badgeAnimation {
+    0% {
+        transform: rotate(-15deg) translateY(-50px); /* Startposition oberhalb der Box */
+        opacity: 0; /* Beginnt unsichtbar */
+    }
+    100% {
+        transform: rotate(-15deg) translateY(0); /* Endposition auf Höhe der Box */
+        opacity: 1; /* Wird sichtbar */
+    }
 }
 
 .counter {
