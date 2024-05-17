@@ -1,0 +1,119 @@
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+p {
+    font-weight: 400;
+    margin: 0 auto 20px;
+    max-width: 450px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    gap: 10px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.box:hover {
+    background-color: #0056b3;
+}
+
+.counter {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    font-size: 0.5em;
+}
+
+.solved {
+    background-color: #28a745 !important;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+#new-game-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+#new-game-btn:hover {
+    background-color: #0056b3;
+}
+
+#reset-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+#reset-btn:hover {
+    background-color: #c82333;
+}
+
+#message {
+    font-size: 1em;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #cccccc;
+}
+
+#current-clicks {
+    font-weight: 700;
+    margin-bottom: 10px;
+}

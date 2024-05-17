@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Puzzle Game</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="game-container">
+            <h1>Puzzle Game</h1>
+            <p>
+                Click on a box to increase the number of the box itself and the neighbouring boxes.
+                The aim is to set all boxes to 0.
+            </p>
+            <div class="content-wrapper">
+                <div class="container">
+                    <div class="box" id="box-0">
+                        <span class="value">0</span>
+                        <span class="counter">Clicks: 0</span>
+                    </div>
+                    <div class="box" id="box-1">
+                        <span class="value">0</span>
+                        <span class="counter">Clicks: 0</span>
+                    </div>
+                    <div class="box" id="box-2">
+                        <span class="value">0</span>
+                        <span class="counter">Clicks: 0</span>
+                    </div>
+                    <div class="box" id="box-3">
+                        <span class="value">0</span>
+                        <span class="counter">Clicks: 0</span>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <p id="current-clicks">Total clicks: 0</p>
+                    <p id="message"></p>
+                    <button id="reset-btn">Reset</button>
+                    <button id="new-game-btn" style="display: none">New game</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
