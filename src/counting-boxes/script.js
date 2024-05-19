@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
             box.querySelector(".value").textContent = randomValue;
             box.querySelector(".counter").textContent = "Clicks: 0";
             box.classList.remove("solved");
+
+            if (randomValue === 3) {
+                box.querySelector(".value").setAttribute("data-change", "=0");
+            } else {
+                box.querySelector(".value").setAttribute("data-change", "+1");
+            }
         });
         saveInitialValues();
         minClickCount = calculateMinClicks();
@@ -63,6 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const box = boxes[i].querySelector(".value");
             let value = parseInt(box.textContent, 10);
             value = (value + 1) % 4;
+            if (value === 3) {
+                box.setAttribute("data-change", "=0");
+            } else {
+                box.setAttribute("data-change", "+1");
+            }
             box.textContent = value;
         });
     }

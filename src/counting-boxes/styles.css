@@ -62,8 +62,25 @@ p {
     border: 3px solid white;
 }
 
-.box:hover::before {
+.box:has([data-change="+1"]):hover::before {
     content: "+1"; /* Der Inhalt des Pseudo-Elements */
+    position: absolute; /* Position relativ zur Box */
+    top: -10px; /* 20px über der Box */
+    right: -10px; /* 20px rechts von der Box */
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10000px;
+    transform: rotate(-5deg); /* Leichte Rotation */
+    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+    opacity: 0; /* Beginnt unsichtbar */
+    user-select: none;
+    z-index: 1000;
+    font-size: 1rem;
+}
+
+.box:has([data-change="=0"]):hover::before {
+    content: "=0"; /* Der Inhalt des Pseudo-Elements */
     position: absolute; /* Position relativ zur Box */
     top: -10px; /* 20px über der Box */
     right: -10px; /* 20px rechts von der Box */
@@ -101,8 +118,34 @@ p {
         .container:has(.box:nth-child(3):hover) .box:nth-child(4),
         .container:has(.box:nth-child(4):hover) .box:nth-child(2),
         .container:has(.box:nth-child(4):hover) .box:nth-child(3)
-    )::before {
+    ):has([data-change="+1"])::before {
     content: "+1"; /* Der Inhalt des Pseudo-Elements */
+    position: absolute; /* Position relativ zur Box */
+    top: -10px; /* 20px über der Box */
+    right: -10px; /* 20px rechts von der Box */
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10000px;
+    transform: rotate(-5deg); /* Leichte Rotation */
+    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+    opacity: 0; /* Beginnt unsichtbar */
+    user-select: none;
+    z-index: 1000;
+    font-size: 1rem;
+}
+
+:is(
+        .container:has(.box:nth-child(1):hover) .box:nth-child(2),
+        .container:has(.box:nth-child(1):hover) .box:nth-child(3),
+        .container:has(.box:nth-child(2):hover) .box:nth-child(1),
+        .container:has(.box:nth-child(2):hover) .box:nth-child(4),
+        .container:has(.box:nth-child(3):hover) .box:nth-child(1),
+        .container:has(.box:nth-child(3):hover) .box:nth-child(4),
+        .container:has(.box:nth-child(4):hover) .box:nth-child(2),
+        .container:has(.box:nth-child(4):hover) .box:nth-child(3)
+    ):has([data-change="=0"])::before {
+    content: "=0"; /* Der Inhalt des Pseudo-Elements */
     position: absolute; /* Position relativ zur Box */
     top: -10px; /* 20px über der Box */
     right: -10px; /* 20px rechts von der Box */
