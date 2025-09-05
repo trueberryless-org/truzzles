@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: truzzles
-    namespace: truzzles
-    annotations:
-        cert-manager.io/issuer: acme-issuer
+  name: truzzles
+  namespace: truzzles
+  annotations:
+    cert-manager.io/issuer: acme-issuer
 spec:
-    selector:
-        app: truzzles
-    ports:
-        - name: http
-          port: 80
+  selector:
+    app: truzzles
+  ports:
+    - name: http
+      port: 80
