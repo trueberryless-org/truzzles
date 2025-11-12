@@ -1,235 +1,235 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
 }
 
 .game-container {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
-    font-weight: 700;
-    margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 p {
-    font-weight: 400;
-    margin: 0 auto 20px;
-    max-width: 450px;
+  font-weight: 400;
+  margin: 0 auto 20px;
+  max-width: 450px;
 }
 
 .content-wrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(2, 100px);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  gap: 10px;
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    background-color: #007bff;
-    color: white;
-    font-size: 2em;
-    cursor: pointer;
-    border-radius: 10px;
-    user-select: none;
-    transition: background-color 0.3s;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: #007bff;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  border-radius: 10px;
+  user-select: none;
+  transition: background-color 0.3s;
+  position: relative;
 }
 
 .box:hover {
-    background-color: #0056b3;
-    cursor: pointer;
-    border: 3px solid white;
+  background-color: #0056b3;
+  cursor: pointer;
+  border: 3px solid white;
 }
 
 .box:has([data-change="+1"]):hover::before {
-    content: "+1"; /* Der Inhalt des Pseudo-Elements */
-    position: absolute; /* Position relativ zur Box */
-    top: -10px; /* 20px über der Box */
-    right: -10px; /* 20px rechts von der Box */
-    background-color: #dc3545;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10000px;
-    transform: rotate(-5deg); /* Leichte Rotation */
-    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
-    opacity: 0; /* Beginnt unsichtbar */
-    user-select: none;
-    z-index: 1000;
-    font-size: 1rem;
+  content: "+1"; /* Der Inhalt des Pseudo-Elements */
+  position: absolute; /* Position relativ zur Box */
+  top: -10px; /* 20px über der Box */
+  right: -10px; /* 20px rechts von der Box */
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10000px;
+  transform: rotate(-5deg); /* Leichte Rotation */
+  animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+  opacity: 0; /* Beginnt unsichtbar */
+  user-select: none;
+  z-index: 1000;
+  font-size: 1rem;
 }
 
 .box:has([data-change="=0"]):hover::before {
-    content: "=0"; /* Der Inhalt des Pseudo-Elements */
-    position: absolute; /* Position relativ zur Box */
-    top: -10px; /* 20px über der Box */
-    right: -10px; /* 20px rechts von der Box */
-    background-color: #dc3545;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10000px;
-    transform: rotate(-5deg); /* Leichte Rotation */
-    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
-    opacity: 0; /* Beginnt unsichtbar */
-    user-select: none;
-    z-index: 1000;
-    font-size: 1rem;
+  content: "=0"; /* Der Inhalt des Pseudo-Elements */
+  position: absolute; /* Position relativ zur Box */
+  top: -10px; /* 20px über der Box */
+  right: -10px; /* 20px rechts von der Box */
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10000px;
+  transform: rotate(-5deg); /* Leichte Rotation */
+  animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+  opacity: 0; /* Beginnt unsichtbar */
+  user-select: none;
+  z-index: 1000;
+  font-size: 1rem;
 }
 
 :is(
-        .container:has(.box:nth-child(1):hover) .box:nth-child(2),
-        .container:has(.box:nth-child(1):hover) .box:nth-child(3),
-        .container:has(.box:nth-child(2):hover) .box:nth-child(1),
-        .container:has(.box:nth-child(2):hover) .box:nth-child(4),
-        .container:has(.box:nth-child(3):hover) .box:nth-child(1),
-        .container:has(.box:nth-child(3):hover) .box:nth-child(4),
-        .container:has(.box:nth-child(4):hover) .box:nth-child(2),
-        .container:has(.box:nth-child(4):hover) .box:nth-child(3)
-    ) {
-    background-color: #0056b3;
+  .container:has(.box:nth-child(1):hover) .box:nth-child(2),
+  .container:has(.box:nth-child(1):hover) .box:nth-child(3),
+  .container:has(.box:nth-child(2):hover) .box:nth-child(1),
+  .container:has(.box:nth-child(2):hover) .box:nth-child(4),
+  .container:has(.box:nth-child(3):hover) .box:nth-child(1),
+  .container:has(.box:nth-child(3):hover) .box:nth-child(4),
+  .container:has(.box:nth-child(4):hover) .box:nth-child(2),
+  .container:has(.box:nth-child(4):hover) .box:nth-child(3)
+) {
+  background-color: #0056b3;
 }
 
 :is(
-        .container:has(.box:nth-child(1):hover) .box:nth-child(2),
-        .container:has(.box:nth-child(1):hover) .box:nth-child(3),
-        .container:has(.box:nth-child(2):hover) .box:nth-child(1),
-        .container:has(.box:nth-child(2):hover) .box:nth-child(4),
-        .container:has(.box:nth-child(3):hover) .box:nth-child(1),
-        .container:has(.box:nth-child(3):hover) .box:nth-child(4),
-        .container:has(.box:nth-child(4):hover) .box:nth-child(2),
-        .container:has(.box:nth-child(4):hover) .box:nth-child(3)
-    ):has([data-change="+1"])::before {
-    content: "+1"; /* Der Inhalt des Pseudo-Elements */
-    position: absolute; /* Position relativ zur Box */
-    top: -10px; /* 20px über der Box */
-    right: -10px; /* 20px rechts von der Box */
-    background-color: #dc3545;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10000px;
-    transform: rotate(-5deg); /* Leichte Rotation */
-    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
-    opacity: 0; /* Beginnt unsichtbar */
-    user-select: none;
-    z-index: 1000;
-    font-size: 1rem;
+    .container:has(.box:nth-child(1):hover) .box:nth-child(2),
+    .container:has(.box:nth-child(1):hover) .box:nth-child(3),
+    .container:has(.box:nth-child(2):hover) .box:nth-child(1),
+    .container:has(.box:nth-child(2):hover) .box:nth-child(4),
+    .container:has(.box:nth-child(3):hover) .box:nth-child(1),
+    .container:has(.box:nth-child(3):hover) .box:nth-child(4),
+    .container:has(.box:nth-child(4):hover) .box:nth-child(2),
+    .container:has(.box:nth-child(4):hover) .box:nth-child(3)
+  ):has([data-change="+1"])::before {
+  content: "+1"; /* Der Inhalt des Pseudo-Elements */
+  position: absolute; /* Position relativ zur Box */
+  top: -10px; /* 20px über der Box */
+  right: -10px; /* 20px rechts von der Box */
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10000px;
+  transform: rotate(-5deg); /* Leichte Rotation */
+  animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+  opacity: 0; /* Beginnt unsichtbar */
+  user-select: none;
+  z-index: 1000;
+  font-size: 1rem;
 }
 
 :is(
-        .container:has(.box:nth-child(1):hover) .box:nth-child(2),
-        .container:has(.box:nth-child(1):hover) .box:nth-child(3),
-        .container:has(.box:nth-child(2):hover) .box:nth-child(1),
-        .container:has(.box:nth-child(2):hover) .box:nth-child(4),
-        .container:has(.box:nth-child(3):hover) .box:nth-child(1),
-        .container:has(.box:nth-child(3):hover) .box:nth-child(4),
-        .container:has(.box:nth-child(4):hover) .box:nth-child(2),
-        .container:has(.box:nth-child(4):hover) .box:nth-child(3)
-    ):has([data-change="=0"])::before {
-    content: "=0"; /* Der Inhalt des Pseudo-Elements */
-    position: absolute; /* Position relativ zur Box */
-    top: -10px; /* 20px über der Box */
-    right: -10px; /* 20px rechts von der Box */
-    background-color: #dc3545;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10000px;
-    transform: rotate(-5deg); /* Leichte Rotation */
-    animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
-    opacity: 0; /* Beginnt unsichtbar */
-    user-select: none;
-    z-index: 1000;
-    font-size: 1rem;
+    .container:has(.box:nth-child(1):hover) .box:nth-child(2),
+    .container:has(.box:nth-child(1):hover) .box:nth-child(3),
+    .container:has(.box:nth-child(2):hover) .box:nth-child(1),
+    .container:has(.box:nth-child(2):hover) .box:nth-child(4),
+    .container:has(.box:nth-child(3):hover) .box:nth-child(1),
+    .container:has(.box:nth-child(3):hover) .box:nth-child(4),
+    .container:has(.box:nth-child(4):hover) .box:nth-child(2),
+    .container:has(.box:nth-child(4):hover) .box:nth-child(3)
+  ):has([data-change="=0"])::before {
+  content: "=0"; /* Der Inhalt des Pseudo-Elements */
+  position: absolute; /* Position relativ zur Box */
+  top: -10px; /* 20px über der Box */
+  right: -10px; /* 20px rechts von der Box */
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10000px;
+  transform: rotate(-5deg); /* Leichte Rotation */
+  animation: badgeAnimation 0.5s ease-in-out forwards; /* Animationseffekt */
+  opacity: 0; /* Beginnt unsichtbar */
+  user-select: none;
+  z-index: 1000;
+  font-size: 1rem;
 }
 
 @keyframes badgeAnimation {
-    0% {
-        transform: rotate(-15deg) translateY(-50px); /* Startposition oberhalb der Box */
-        opacity: 0; /* Beginnt unsichtbar */
-    }
-    100% {
-        transform: rotate(-15deg) translateY(0); /* Endposition auf Höhe der Box */
-        opacity: 1; /* Wird sichtbar */
-    }
+  0% {
+    transform: rotate(-15deg) translateY(-50px); /* Startposition oberhalb der Box */
+    opacity: 0; /* Beginnt unsichtbar */
+  }
+  100% {
+    transform: rotate(-15deg) translateY(0); /* Endposition auf Höhe der Box */
+    opacity: 1; /* Wird sichtbar */
+  }
 }
 
 .counter {
-    display: none;
-    position: absolute;
-    bottom: 5px;
-    font-size: 0.5em;
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  font-size: 0.5em;
 }
 
 .solved {
-    background-color: #28a745 !important;
+  background-color: #28a745 !important;
 }
 
 .button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
 }
 
 #new-game-btn {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
 }
 
 #new-game-btn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 #reset-btn {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #dc3545;
-    color: white;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #dc3545;
+  color: white;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
 }
 
 #reset-btn:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }
 
 #message {
-    font-size: 1em;
-    margin-top: 10px;
-    font-weight: 700;
-    color: #cccccc;
+  font-size: 1em;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #cccccc;
 }
 
 #current-clicks {
-    font-weight: 700;
-    margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
