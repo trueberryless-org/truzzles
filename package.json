@@ -1,6 +1,6 @@
 {
   "name": "truzzles-monorepo",
-  "homepage": "https://truzzles.trueberryless.org",
+  "homepage": "https://truzzles.felixs.dev",
   "bugs": {
     "url": "https://github.com/trueberryless-org/truzzles/issues"
   },
@@ -9,7 +9,7 @@
     "url": "https://github.com/trueberryless-org/truzzles.git"
   },
   "license": "MIT",
-  "author": "trueberryless <trueberryless@gmail.com> (https://trueberryless.org)",
+  "author": "trueberryless <trueberryless@gmail.com> (https://felixs.dev)",
   "scripts": {
     "version": "pnpm changeset version && pnpm i --no-frozen-lockfile"
   },
